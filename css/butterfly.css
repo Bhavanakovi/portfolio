@@ -1,0 +1,75 @@
+body, html {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #app {
+    overflow: hidden;
+    touch-action: pan-up;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    text-shadow: 0 0 5px #000000, 0 0 20px #000;
+    user-select: none;
+    position: relative;
+    height: 100%;
+  }
+  
+  #app h1 {
+    --fontSize: 50px;
+    --lineHeight: 100px;
+    width: auto;
+    height: calc(2 * var(--lineHeight));
+    line-height: var(--lineHeight);
+    margin: calc(40vh - var(--lineHeight)) auto 0;
+    font-size: var(--fontSize);
+    font-family: 'Cinzel', serif;
+  }
+  #app h1 span {
+    display: inline-block; /* Required for animation */
+    animation: flap 0.75s infinite ease-in-out; /* Apply animation */
+  }
+/* Animation keyframes */
+@keyframes flap {
+    0%, 20%, 80%, 100% {
+      transform: scaleX(1) rotate(5deg);
+    }
+    50% {
+      transform: scaleX(0.7) rotate(7deg);
+    }
+  }  
+  #app canvas {
+    display: block;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    pointer-events: none !important; /* Disable canvas events */
+  }
+  
+  .portfolio-button {
+    position: absolute; /* Position independently */
+    bottom: 20px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000; /* Above everything */
+    pointer-events: auto; /* Ensure clickable */
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(45deg, #6d28d9, #4c1d95);
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .portfolio-button:hover {
+    background: linear-gradient(45deg, #4c1d95, #6d28d9);
+    transform: translateX(-50%) scale(1.05); /* Adjust for positioning */
+  }
+
+  
